@@ -3,6 +3,7 @@ from tkinter import *
 
 # Constants
 pi = 3.141592653589793
+MY_FONT = ("Book Antiqua", 18, "bold")
 
 # Create the main window
 window = Tk()
