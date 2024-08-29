@@ -1,26 +1,3 @@
-# import tkinter
-#
-# window = tkinter.Tk()
-# window.title("My First GUI")
-# window.minsize(width=500, height=300)
-#
-# # Label
-# my_label = tkinter.Label(text="I am a label", font=("Arial", 24, "bold"))
-# my_label.pack(side="left")
-# # my_label_a = tkinter.Label(text="I am another label", font=("Arial", 24, "bold"))
-# # my_label_a.pack(expand=True)
-#
-# # same same.
-# my_label["text"] = "New Text"
-# my_label.config(text="New Text")
-#
-# button = tkinter.Button
-#
-# #Like a 'while True:'
-# window.mainloop()
-
-###################
-
 # Import the necessary modules from tkinter
 from tkinter import *
 
@@ -28,6 +5,8 @@ from tkinter import *
 window = Tk()
 window.title("My First GUI")  # Set the window title
 window.minsize(width=500, height=300)  # Set the minimum window size
+window.config(padx=100, pady=100)
+
 
 # Create a label widget
 my_label = Label(
@@ -47,14 +26,17 @@ my_label.grid(column=0, row=0)
 # Create a button widget
 def button_clicked():
     print("click me again!")
-    text = input.get()
+    text = entry.get()
     my_label.config(text=text)
 
 button = Button(text="Click me baby", command=button_clicked)
-# button.pack()  # Add the button to the window
+button.grid(column=1, row=1)  # Add the button to the window
 
-input = Entry(width=10)
-# input.pack()
+button_a = Button(text="New Button", command=button_clicked)
+button_a.grid(column=2, row=0)  # Add the button to the window
+
+entry = Entry(width=10)
+entry.grid(column=3, row=2)
 
 
 # # Using return/enter key
