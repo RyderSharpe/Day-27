@@ -25,8 +25,11 @@ def convert():
 
 # Function to add a conversion to history
 def add_to_history(input_value, output_value):
-    conversion_type = "Degrees to Radians" if conversion_mode.get() == "DegToRad" else "Radians to Degrees"
+    conversion_type = "Degrees to Radians" \
+        if conversion_mode.get() == "DegToRad" \
+        else "Radians to Degrees"
     history_list.insert(END, f"{input_value} -> {output_value:.4f} ({conversion_type})")
+
 
 # Function to reset the input field, output label, and history
 def reset_fields():
@@ -89,7 +92,8 @@ input_label.grid(column=0, row=1, sticky=W)
 # Entry widget for user input
 entry = ttk.Entry(frame, width=10)
 entry.grid(column=1, row=1, sticky=(W, E))
-entry.bind("<KeyRelease>", lambda event: convert())
+convert_button = ttk.Button(frame, text="Convert", command=convert)
+
 
 # Output Label
 output_label = ttk.Label(frame, text="Result will be displayed here", foreground="blue")
